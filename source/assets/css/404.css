@@ -1,0 +1,20 @@
+#status {
+	font-size: 9em;
+	font-weight: 700;
+	font-family: sans-serif;
+	text-align: center;
+	margin: 0;
+}
+
+.Lang {
+	color: grey;
+	text-align: center;
+	margin-top: 3em;
+	margin-bottom: 3em;
+}
+
+main {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}

@@ -1,0 +1,13 @@
+<% if (page.comment && page.password === null) { %>
+	<div class="Seperator">
+		<div id="comment">
+			<script src="https://utteranc.es/client.js"
+					repo=<%= theme.post.comment.repo %>
+					issue-term="title"
+					theme="preferred-color-scheme"
+					crossorigin="anonymous"
+					async>
+			</script>
+		</div>
+	</div>
+<% } %>

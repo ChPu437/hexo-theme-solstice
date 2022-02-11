@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html lang="<%= config.language %>">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="author" content="<%= config.author %>" />
+	<meta name="description" content="<%= config.description %>" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="icon" href="/favicon.ico" />
+
+	<% if (is_home()) { %>
+		<%- partial("_partial/head/home") %>
+	<% } %>
+	<% if (is_post()) { %>
+		<%- partial("_partial/head/post") %>
+	<% } %>
+</head>
+
+
+<body>
+	<header class="NoCopy NoDrag"><%- partial("_partial/header") %></header>	
+	<%- body %>
+	<footer class="NoCopy NoDrag"><%- partial("_partial/footer") %></footer>
+</body>
+
+</html>
