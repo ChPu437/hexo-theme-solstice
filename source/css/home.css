@@ -22,7 +22,7 @@ body::before {
 	position: fixed;
 	width: 100%; height: 100%;
 	top: 0; left: 0;
-	background: no-repeat center/cover url("/img/background/bg.jpg");
+	background: no-repeat center/cover url("https://s2.loli.net/2022/01/15/YUbulogsALCX6ip.jpg");
 	background-color: #555555;
 
 	z-index: -1;
