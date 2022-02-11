@@ -1,4 +1,14 @@
-<% if (page.comment && page.password === null) { %>
+<div id="greeter" class="NoCopy">
+	<!--注意手机端标题有锅-->
+	<h1 id="title"><%= page.title %></h1>
+	<div id="date"><%- date(page.date, "MM / DD / YYYY") %> (最后编辑于 <%- date(page.updated, "MM / DD / YYYY")%>)</div>
+</div>
+
+<div class="Seperator">
+	<main><%- page.content %></main>
+</div>
+
+<% if (page.comment) { %>
 	<div class="Seperator">
 		<div id="comment">
 			<script src="https://utteranc.es/client.js"

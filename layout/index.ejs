@@ -3,11 +3,22 @@
 		<%= config.author %>'s Blog
 	</div>
 	<div id="slogan">
-		<%= theme.index.slogan %>
+		<% if (theme.home.slogan != null) { %>
+			<%= theme.home.slogan %>
+		<% } else { %>
+			<%= config.subtitle %>
+		<% } %>
 	</div>
 </div>
 
 <main>
 	<div id="postsContainer">
+		<% site.posts.each(function(post){ %>
+			<a class="Post" href="<%- url_for(post.path) %>">
+				<div class="PostTitle"><%= post.title %></div>
+				<div class="PostSummary"><%= post.summary %></div>
+				<div class="PostDate NoCopy"><%- date(post.date, "MM / DD / YYYY") %></div>
+			</a>
+		<% }) %>
 	</div>
 </main>
