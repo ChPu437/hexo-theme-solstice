@@ -170,9 +170,12 @@ main blockquote {
 .spoiler {
 	background-color: #EAEAEA;
 }
+.Right {
+	text-align: right;
+}
 
 main code {
-	background: border-box rgb(38, 42, 49, 1);
+	background: border-box rgb(36, 40, 47, 1);
 	border-radius: 0.3em;
 	font-family: 'Jetbrains Mono', monospace;
 	font-size: 0.9em;
@@ -185,9 +188,9 @@ main p code {
 	overflow-x: auto;
 }
 pre {
-	margin: 0.3em; padding: 1em;
+	margin: 0.3em; padding: 0;
 	border-radius: 0.3em;
-	background: border-box rgb(38, 42, 49, 1);
+	background: border-box rgb(36, 40, 47, 1);
 	overflow-x: auto;
 }
 
