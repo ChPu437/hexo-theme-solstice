@@ -1,4 +1,4 @@
-<div id="greeter" class="NoCopy">
+<div id="greeter" class="no_copy">
 	<div id="title">
 		<%= config.author %>'s Blog
 	</div>
@@ -17,7 +17,7 @@
 			<a class="Post" href="<%- url_for(post.path) %>">
 				<div class="PostTitle"><%= post.title %></div>
 				<div class="PostSummary"><%= post.summary %></div>
-				<div class="PostDate NoCopy"><%- date(post.date, "MM / DD / YYYY") %></div>
+				<div class="PostDate no_copy"><%- date(post.date, "MM / DD / YYYY") %></div>
 			</a>
 		<% }) %>
 	</div>

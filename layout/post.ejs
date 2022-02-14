@@ -1,15 +1,15 @@
-<div id="greeter" class="NoCopy">
+<div id="greeter" class="no_copy">
 	<!--注意手机端标题有锅-->
 	<h1 id="title"><%= page.title %></h1>
 	<div id="date"><%- date(page.date, "MM / DD / YYYY") %> (最后编辑于 <%- date(page.updated, "MM / DD / YYYY")%>)</div>
 </div>
 
-<div class="Seperator">
+<div class="seperator">
 	<main><%- page.content %></main>
 </div>
 
 <% if (page.comment) { %>
-	<div class="Seperator">
+	<div class="seperator">
 		<div id="comment">
 			<script src="https://utteranc.es/client.js"
 					repo=<%= theme.post.comment.repo %>
