@@ -1,4 +1,4 @@
-@import 'common.styl';
+@import '_shared/common.styl';
 
 @font-face {
 	font-family: 'JetBrains Mono';
@@ -51,6 +51,12 @@ html {
 				font-weight: bold;
 				text-shadow: 1px 1px 8px #666666;
 			}
+
+			#reading_time {
+				color: @color;
+				font-weight: bold;
+				text-shadow: 1px 1px 8px #666666;
+			}
 		}
 
 		.seperator {
@@ -68,7 +74,7 @@ html {
 			-webkit-backdrop-filter: saturate(150%) contrast(100%) blur(8px);
 
 			// text style
-			hr { // seperator line
+			hr { // seperate line
 				background-color: rgb(196, 196, 196, 1);
 				border: none;
 				width: 90%;
@@ -114,7 +120,6 @@ html {
 				display: block;
 				margin: 0 auto;
 				max-width: 30em;
-				max-height: 30em;
 			}
 
 			table {
