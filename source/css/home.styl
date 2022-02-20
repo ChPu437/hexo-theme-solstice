@@ -29,18 +29,16 @@ html {
 			margin-bottom: 3em;
 			padding: 0 1em;
 			min-height: 20em;
-			z-index: inherit;
+			z-index: 1;
 
 			#postsContainer {
 				min-height: @min-height;
-				z-index: inherit;
+				z-index: @z-index;
 				margin: 0 auto;
 				max-width: 40em;
 				padding: 1em 1em 1em 1em;
 				border-radius: 1em;
-				background-color: rgba(0, 0, 0, 0.3);
-				backdrop-filter: saturate(150%) contrast(100%) blur(8px);
-				-webkit-backdrop-filter: saturate(150%) contrast(100%) blur(8px);
+				{background-blur};
 
 				.Post {
 					color: inherit;
