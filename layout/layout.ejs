@@ -14,18 +14,18 @@
 	<link rel="stylesheet" type="text/css"
 		href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900" />
 	<%- css("//cdn.bootcdn.net/ajax/libs/KaTeX/0.15.2/katex.min.css") %>
-
+	
 	<% if (is_home()) { %>
 		<%- partial("_partial/head/home") %>
 	<% } %>
 	<% if (is_post()) { %>
 		<%- partial("_partial/head/post") %>
 	<% } %>
+
 </head>
 
-
 <body>
-	<header class="no_copy no_drag"><%- partial("_partial/header") %></header>	
+	<header class="no_copy no_drag"><%- partial("_partial/header") %></header>
 	<%- body %>
 	<footer class="no_copy no_drag"><%- partial("_partial/footer") %></footer>
 </body>

@@ -3,4 +3,4 @@
 	<small>本文章采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0)</a>许可证进行认证。</small></div>
 <% } %>
 <div id="copyright"><small><%- mail_to(theme.email, config.author) %> Copyright © 2021 ~ 2022</small></div>
-<div id="credit"><small>由 <%- mail_to(theme.email, config.author) %> 带劲驱动</small></div>
+<div id="credit"><small>由 <%- mail_to(theme.email, config.author) %> 带劲驱动 <% if (theme.static.enable) { %><a href="https://www.cnzz.com/stat/website.php?id=<%= theme.static.id %>&web_id=<%= theme.static.id %>" target="_blank" title="站长统计">站长统计</a><% } %></small></div>
