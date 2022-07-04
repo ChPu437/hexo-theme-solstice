@@ -7,6 +7,8 @@
 	font-style: normal;
 }
 
+greeter_color = #F8F8F8;
+
 html {
 	body {
 		#tag_container {
@@ -22,7 +24,12 @@ html {
 				padding: 0.1em 0.3em;
 				border-radius: 0.3em;
 				font-size: 0.9em;
-				{background-blur};
+				{background-blur-thin};
+
+				a {
+					text-decoration: none;
+					color: greeter_color;
+				}
 			}
 		}
 
@@ -34,7 +41,7 @@ html {
 			justify-content: center;
 			height: 40%;
 			min-height: 10em;
-			color: #F8F8F8;
+			color: greeter_color;
 
 			#title {
 				color: @color;
@@ -67,7 +74,7 @@ html {
 			min-height: 40em;
 			padding: 0.3em 1em 1em;
 			border-radius: 1em;
-			{background-blur};
+			{background-blur-thick};
 
 			// text style
 			hr { // seperate line
@@ -146,7 +153,7 @@ html {
 			min-height: 10em;
 			padding: 0 1em;
 			border-radius: 1em;
-			{background-blur};
+			{background-blur-thick};
 		}
 	}
 }

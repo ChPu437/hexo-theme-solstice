@@ -1,0 +1,22 @@
+<% page.tags.each(function(tag){ %>
+
+<% }) %>
+
+<div id="greeter" class="no_copy">
+	<div id="title">标签：<%  %></div>
+	<div id="post_count">共 <%  %> 篇文章</div>
+</div>
+
+<main>
+	<div id="postsContainer">
+		<% site.posts.each(function(post){ %>
+			<% if (!post.hidden) { %>
+				<a class="Post" href="<%- url_for(post.path) %>">
+					<div class="PostTitle"><%= post.title %></div>
+					<div class="PostSummary"><%= post.summary %></div>
+					<div class="PostDate no_copy"><%- date(post.date, "MM / DD / YYYY") %></div>
+				</a>
+			<% } %>
+		<% }) %>
+	</div>
+</main>

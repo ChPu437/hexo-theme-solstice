@@ -21,7 +21,9 @@
 	<% if (is_post()) { %>
 		<%- partial("_partial/head/post") %>
 	<% } %>
-
+	<% if (is_tag()) { %>
+		<%- partial("_partial/head/tag") %>
+	<% } %>
 </head>
 
 <body>

@@ -14,7 +14,7 @@
 <main>
 	<div id="postsContainer">
 		<% site.posts.each(function(post){ %>
-			<% if (post.pinned) { %>
+			<% if (post.pinned && !post.hidden) { %>
 				<a class="Post" href="<%- url_for(post.path) %>">
 					<div class="PostTitle">[置顶] <%= post.title %></div>
 					<div class="PostSummary"><%= post.summary %></div>
@@ -23,7 +23,7 @@
 			<% } %>
 		<% }) %>
 		<% site.posts.each(function(post){ %>
-			<% if (!post.pinned) { %>
+			<% if (!post.pinned && !post.hidden) { %>
 				<a class="Post" href="<%- url_for(post.path) %>">
 					<div class="PostTitle"><%= post.title %></div>
 					<div class="PostSummary"><%= post.summary %></div>
