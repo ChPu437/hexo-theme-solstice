@@ -3,11 +3,13 @@
 		<img class="button_icon" alt="首页" src="/img/icon/home.svg" />
 	</a>
 </div>
-<div class="header_button">
-	<a class="button_link" href="/links/">
-		<img class="button_icon" alt="友链" src="/img/icon/links.svg" />
-	</a>
-</div>
+<% if (theme.pages.links.enable) { %>
+	<div class="header_button">
+		<a class="button_link" href="/links/">
+			<img class="button_icon" alt="友链" src="/img/icon/links.svg" />
+		</a>
+	</div>
+<% } %>
 <div class="header_button">
 	<a class="button_link" href="/about/">
 		<img class="button_icon" alt="关于" src="/img/icon/about.svg" />

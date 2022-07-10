@@ -24,6 +24,9 @@
 	<% if (is_tag()) { %>
 		<%- partial("_partial/head/tag") %>
 	<% } %>
+	<% if (is_page()) { %>
+		<%- partial("_partial/head/page") %>
+	<% } %>
 </head>
 
 <body>
