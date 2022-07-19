@@ -34,10 +34,41 @@ html {
 				border-radius: 1em;
 				{background-blur-thick};
 
-				.Blog {
+				#blogContainer {
+					display: grid;
+					grid-template-columns: repeat(3, 33.3%);
+					grid-template-rows: repeat(auto-fill, 4em);
+
+					.Blog {
+						margin: 0.4em;
+						padding: 0.1em;
+						border-radius: 0.5em;
+						transition: hover_delay ease-in-out background-color;
+
+						&:hover {
+							background-color: rgba(255, 255, 255, 0.1);
+							transition: hover_delay ease-in-out background-color;
+						}
+
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+
+						img {
+							margin: 0.2em 0.5em 0.1em 0.1em;
+							height: 2.8em;
+							width: 2.8em;
+							border-radius: 100%;
+						}
+
+						text-decoration: none;
+						color: default_color;
+					}
 				}
 
-				.Site {
+				#websiteContainer {
+					.Site {
+					}
 				}
 			}
 		}
