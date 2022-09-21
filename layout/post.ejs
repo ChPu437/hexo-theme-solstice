@@ -1,29 +1,24 @@
 <div id="greeter" class="no_copy">
-	<!--注意手机端标题有锅-->
-	<h1 id="title"><%= page.title %></h1>
-	<div id="date"><%- date(page.date, "MM / DD / YYYY") %> (最后编辑于 <%- date(page.updated, "MM / DD / YYYY")%>)</div>
-	<div id="reading_time">预计阅读时间 <%- readingTime(page.content, " 分钟", 75) %></div>
-	<div id="tag_container">
-		<% page.tags.each(function(tag){ %>
-			<div class="tag"><a href="<%- url_for(tag.path) -%>"><%= tag.name %></a></div>
-		<% }) %>
-	</div>
+  <!--注意手机端标题有锅-->
+  <h1 id="title"><%= page.title %></h1>
+  <div id="date"><%- date(page.date, "MM / DD / YYYY") %> (最后编辑于 <%- date(page.updated, "MM / DD / YYYY")%>)</div>
+  <div id="reading_time">预计阅读时间 <%- readingTime(page.content, " 分钟", 75) %></div>
+  <div id="tag_container">
+    <% page.tags.each(function(tag){ %>
+    <div class="tag"><a href="<%- url_for(tag.path) -%>"><%= tag.name %></a></div>
+    <% }) %>
+  </div>
 </div>
 
 <div class="seperator">
-	<main><%- page.content %></main>
+  <main><%- page.content %></main>
 </div>
 
 <% if (page.comment) { %>
-	<div class="seperator">
-		<div id="comment">
-			<script src="https://utteranc.es/client.js"
-					repo="<%= theme.post.comment.repo %>"
-					issue-term="pathname"
-					theme="preferred-color-scheme"
-					crossorigin="anonymous"
-					async>
-			</script>
-		</div>
-	</div>
+<div class="seperator">
+  <div id="comment">
+    <script src="https://utteranc.es/client.js" repo="<%= theme.post.comment.repo %>" issue-term="pathname" theme="preferred-color-scheme" crossorigin="anonymous" async>
+    </script>
+  </div>
+</div>
 <% } %>

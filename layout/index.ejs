@@ -1,35 +1,36 @@
 <div id="greeter" class="no_copy">
-	<div id="title">
-		<%= config.author %>'s Blog
-	</div>
-	<div id="slogan">
-		<% if (theme.home.slogan != null) { %>
-			<%= theme.home.slogan %>
-		<% } else { %>
-			<%= config.subtitle %>
-		<% } %>
-	</div>
+  <div id="title">
+    <%= config.author %>'s Blog
+  </div>
+  <div id="slogan">
+    <% if (theme.home.slogan != null) { %>
+    <%= theme.home.slogan %>
+    <% } else { %>
+    <%= config.subtitle %>
+    <% } %>
+  </div>
 </div>
 
-<main> <!--由于Hexo的文章排序算法对中文支持不好，这里需要自己实现一个排序算法-->
-	<div id="postsContainer">
-		<% site.posts.each(function(post){ %>
-			<% if (post.pinned && !post.hidden) { %>
-				<a class="Post" href="<%- url_for(post.path) %>">
-					<div class="PostTitle">[置顶] <%= post.title %></div>
-					<div class="PostSummary"><%= post.summary %></div>
-					<div class="PostDate no_copy"><%- date(post.date, "MM / DD / YYYY") %></div>
-				</a>
-			<% } %>
-		<% }) %>
-		<% site.posts.each(function(post){ %>
-			<% if (!post.pinned && !post.hidden) { %>
-				<a class="Post" href="<%- url_for(post.path) %>">
-					<div class="PostTitle"><%= post.title %></div>
-					<div class="PostSummary"><%= post.summary %></div>
-					<div class="PostDate no_copy"><%- date(post.date, "MM / DD / YYYY") %></div>
-				</a>
-			<% } %>
-		<% }) %>
-	</div>
+<main>
+  <!--由于Hexo的文章排序算法对中文支持不好，这里需要自己实现一个排序算法-->
+  <div id="postsContainer">
+    <% site.posts.each(function(post){ %>
+    <% if (post.pinned && !post.hidden) { %>
+    <a class="Post" href="<%- url_for(post.path) %>">
+      <div class="PostTitle">[置顶] <%= post.title %></div>
+      <div class="PostSummary"><%= post.summary %></div>
+      <div class="PostDate no_copy"><%- date(post.date, "MM / DD / YYYY") %></div>
+    </a>
+    <% } %>
+    <% }) %>
+    <% site.posts.each(function(post){ %>
+    <% if (!post.pinned && !post.hidden) { %>
+    <a class="Post" href="<%- url_for(post.path) %>">
+      <div class="PostTitle"><%= post.title %></div>
+      <div class="PostSummary"><%= post.summary %></div>
+      <div class="PostDate no_copy"><%- date(post.date, "MM / DD / YYYY") %></div>
+    </a>
+    <% } %>
+    <% }) %>
+  </div>
 </main>

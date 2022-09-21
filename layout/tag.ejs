@@ -2,29 +2,29 @@
 <% let postList = [] %>
 
 <% site.posts.each(function(post){%>
-	<% if (!post.hidden) { %>
-		<% post.tags.each(function(tag){ %>
-			<% if (tag.name == page.tag) { %>
-				<% postList.push(post) %>
-				<% count += 1 %>
-			<% } %>
-		<% }) %>
-	<% } %>
+<% if (!post.hidden) { %>
+<% post.tags.each(function(tag){ %>
+<% if (tag.name == page.tag) { %>
+<% postList.push(post) %>
+<% count += 1 %>
+<% } %>
+<% }) %>
+<% } %>
 <% })%>
 
 <div id="greeter" class="no_copy">
-	<div id="title">标签：<%= page.tag %></div>
-	<div id="post_count">共 <%= count %> 篇文章</div>
+  <div id="title">标签：<%= page.tag %></div>
+  <div id="post_count">共 <%= count %> 篇文章</div>
 </div>
 
 <main>
-	<div id="postsContainer">
-		<% for (var i = 0; i < postList.length; i++) { %>
-			<a class="Post" href="<%- url_for(postList[i].path) %>">
-				<div class="PostTitle"><%= postList[i].title %></div>
-				<div class="PostSummary"><%= postList[i].summary %></div>
-				<div class="PostDate no_copy"><%- date(postList[i].date, "MM / DD / YYYY") %></div>
-			</a>
-		<% } %>
-	</div>
+  <div id="postsContainer">
+    <% for (var i = 0; i < postList.length; i++) { %>
+    <a class="Post" href="<%- url_for(postList[i].path) %>">
+      <div class="PostTitle"><%= postList[i].title %></div>
+      <div class="PostSummary"><%= postList[i].summary %></div>
+      <div class="PostDate no_copy"><%- date(postList[i].date, "MM / DD / YYYY") %></div>
+    </a>
+    <% } %>
+  </div>
 </main>
