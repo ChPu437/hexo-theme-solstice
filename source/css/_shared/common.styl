@@ -5,6 +5,8 @@ user-select() {
 }
 
 default_color = #EAEAEA;
+greeter_color = #F8F8F8;
+greeter_color_thin = #EEEEEE;
 hover_delay = 0.2s;
 background-blur-thick =
 	@supports (backdrop-filter: saturate(150%) contrast(70%) blur(8px)) {
@@ -79,6 +81,19 @@ html {
 					width: @width;
 					height: @height;
 				}
+			}
+		}
+
+		#greeter {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+
+			div, h1 {
+				max-width: 95%;
+				word-wrap: break-word;
 			}
 		}
 
