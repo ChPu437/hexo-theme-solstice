@@ -7,60 +7,63 @@
 	font-style: normal;
 }
 
-greeter_color = #F8F8F8;
 
 html {
 	body {
-		#tag_container {
-			margin: 1em 1em;
-			display: flex;
-			flex-direction: row;
-			flex-wrap: wrap;
-			align-items: center;
-			justify-content: center;
 
-			.tag {
-				margin: 0.1em 0.3em;
-				padding: 0.1em 0.3em;
-				border-radius: 0.3em;
-				font-size: 0.9em;
-				{background-blur-thin};
-
-				a {
-					text-decoration: none;
-					color: greeter_color;
-				}
-			}
-		}
 
 		#greeter {
-			width: 100%;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
+			// width: 100%;
+			// display: flex;
+			// flex-direction: column;
+			// align-items: center;
+			// justify-content: center;
 			// height: 40%;
 			min-height: 10em;
-			color: greeter_color;
 
 			#title {
-				color: @color;
+				color: greeter_color;
 				text-shadow: 1px 1px 8px #666666;
 				font-weight: 400;
 				font-family: sans-serif;
 				font-size: 3em;
+				margin-bottom: 0.5em;
+			}
+
+			#tag_container {
+				margin: 0 1em;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				align-items: center;
+				justify-content: center;
+
+				.tag {
+					margin: 0.1em 0.3em;
+					padding: 0.1em 0.3em;
+					border-radius: 0.3em;
+					font-size: 0.9em;
+					{background-blur-thin};
+
+					a {
+						text-decoration: none;
+						color: greeter_color;
+					}
+				}
 			}
 
 			#date {
-				color: @color;
+				color: greeter_color;
 				font-weight: bold;
 				text-shadow: 1px 1px 8px #666666;
+				margin-top: 0.5em;
 			}
 
 			#reading_time {
-				color: @color;
+				color: greeter_color;
 				font-weight: bold;
 				text-shadow: 1px 1px 8px #666666;
+				margin-bottom: 1em;
 			}
 		}
 
@@ -129,6 +132,13 @@ html {
 				margin: 0 auto;
 			}
 
+			a {
+				color: #58C9B9;
+				&:visited {
+					color: #D1B6E1;
+				}
+			}
+
 			.center {
 				text-align: center;
 			}
@@ -140,6 +150,11 @@ html {
 
 			.spoiler {
 				background-color: #EAEAEA;
+				transition: hover_delay ease-in-out background-color;
+
+				&:hover {
+					background-color: unset;
+				}
 			}
 
 			.right {

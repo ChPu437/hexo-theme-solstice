@@ -2,3 +2,8 @@
 <%- css("/css/links.css") %>
 <title>友链 | <%= config.title %></title>
 <% } %>
+
+<% if (page.type == 'about') { %>
+<%- css("/css/about.css") %>
+<title>关于 | <%= config.title %></title>
+<% } %>

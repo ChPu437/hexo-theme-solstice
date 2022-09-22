@@ -9,12 +9,27 @@ html {
 			// align-items: center;
 			// justify-content: center;
 			// height: 25%;
-			min-height: 16em;
+			margin-bottom: 3em;
+			min-height: 7em;
 
-			#title {
-				color: greeter_color;
+			#title{
+				color: #F8F8F8;
 				text-shadow: 1px 1px 8px #666666;
 				font-size: 300%;
+				font-family: sans-serif;
+			}
+
+			#avatar{
+				margin-top: 1.5em;
+				height: 10em;
+				width: 10em;
+				border-radius: 100%;
+			}
+
+			#name{
+				color: #F8F8F8;
+				text-shadow: 1px 1px 8px #666666;
+				font-size: 250%;
 				font-family: sans-serif;
 			}
 		}
@@ -26,6 +41,7 @@ html {
 			z-index: 1;
 
 			#container {
+			
 				min-height: @min-height;
 				z-index: @z-index;
 				margin: 0 auto;
@@ -34,7 +50,7 @@ html {
 				border-radius: 1em;
 				{background-blur-thick};
 
-				#blogContainer {
+				#blogContainer { // 改为github等跳转按钮
 					display: grid;
 					grid-template-columns: repeat(3, 33.3%);
 					grid-template-rows: repeat(auto-fill, 4em);
@@ -47,6 +63,7 @@ html {
 
 						&:hover {
 							background-color: rgba(255, 255, 255, 0.1);
+							transition: hover_delay ease-in-out background-color;
 						}
 
 						display: flex;
@@ -61,13 +78,7 @@ html {
 						}
 
 						text-decoration: none;
-						word-wrap: break-word;
 						color: default_color;
-					}
-				}
-
-				#websiteContainer {
-					.Site {
 					}
 				}
 			}
