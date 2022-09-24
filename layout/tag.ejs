@@ -19,7 +19,20 @@
 
 <main>
   <div id="postsContainer">
-    <% for (var i = 0; i < postList.length; i++) { %>
+    <%# 由于Hexo的文章排序算法对中文支持不好，这里需要自己实现一个排序算法 %>
+    <% postList.sort((a, b) => { %>
+    <%   if(a.date.year() == b.date.year()) { %>
+    <%     if(a.date.month() == b.date.month()) { %>
+    <%       return a.date.day() > b.date.day() ? -1 : 1 %>
+    <%     } else { %>
+    <%       return a.date.month() > b.date.month() ? -1 : 1 %>
+    <%     } %>
+    <%   } else { %>
+    <%     return a.date.year() > b.date.year() ? -1 : 1 %>
+    <%   } %>
+    <% }); %>
+
+    <% for (var i = 0; i < count; i++) { %>
     <a class="Post" href="<%- url_for(postList[i].path) %>">
       <div class="PostTitle"><%= postList[i].title %></div>
       <div class="PostSummary"><%= postList[i].summary %></div>
