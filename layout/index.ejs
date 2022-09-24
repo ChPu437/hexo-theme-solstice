@@ -14,20 +14,30 @@
 <main>
   <div id="postsContainer">
     <%# 由于Hexo的文章排序算法对中文支持不好，这里需要自己实现一个排序算法 %>
-    <% var posts_sorted = site.posts.sort((a, b) => { %>
-    <%   if(a.date.getFullYear() === b.date.getFullYear()) { %>
-    <%     if(a.date.getMonth() === b.date.getMonth()) { %>
-    <%       return a.date.getDay() > b.date.getDay() ? -1 : 1 %>
+
+    <% var posts = [] %>
+    <% { cnt = 0; %>
+    <% site.posts.each((post) => { %>
+    <%# Hexo我囸你码，site.posts是个Query……%>
+    <%  posts[cnt++] = post; %>
+    <% })} %>
+
+    <% var p2 = posts, a = posts[1]; %>
+
+    <% posts.sort((a, b) => { %>
+    <%   if(a.date.year() == b.date.year()) { %>
+    <%     if(a.date.month() == b.date.month()) { %>
+    <%       return a.date.day() > b.date.day() ? -1 : 1 %>
     <%     } else { %>
-    <%       return a.date.getMonth() > b.date.getMonth() ? -1 : 1 %>
+    <%       return a.date.month() > b.date.month() ? -1 : 1 %>
     <%     } %>
     <%   } else { %>
-    <%     return a.date.getFullYear() > b.date.getFullYear() ? -1 : 1 %>
+    <%     return a.date.year() > b.date.year() ? -1 : 1 %>
     <%   } %>
-    <% }) %>
+    <% }); %>
 
-    <% posts_sorted.forEach(function(post){ %>
-    <% if (post.pinned && !post.hidden) { %>
+    <% posts.forEach((post) => { %>
+    <% if (post.pinned === true && post.hidden === false) { %>
     <a class="Post" href="<%- url_for(post.path) %>">
       <div class="PostTitle">[置顶] <%= post.title %></div>
       <div class="PostSummary"><%= post.summary %></div>
@@ -36,8 +46,8 @@
     <% } %>
     <% }) %>
 
-    <% posts_sorted.each(function(post){ %>
-    <% if (!post.pinned && !post.hidden) { %>
+    <% posts.forEach((post) => { %>
+    <% if (post.pinned != true && post.hidden === false) { %>
     <a class="Post" href="<%- url_for(post.path) %>">
       <div class="PostTitle"><%= post.title %></div>
       <div class="PostSummary"><%= post.summary %></div>
