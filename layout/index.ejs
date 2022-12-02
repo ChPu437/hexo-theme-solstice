@@ -22,8 +22,6 @@
     <%  posts[cnt++] = post; %>
     <% })} %>
 
-    <% var p2 = posts, a = posts[1]; %>
-
     <% posts.sort((a, b) => { %>
     <%   if(a.date.year() == b.date.year()) { %>
     <%     if(a.date.month() == b.date.month()) { %>
