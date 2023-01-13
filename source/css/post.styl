@@ -10,8 +10,6 @@
 
 html {
 	body {
-
-
 		#greeter {
 			// width: 100%;
 			// display: flex;
@@ -80,6 +78,15 @@ html {
 			{background-blur-thick};
 
 			// text style
+
+			h1, h2, h3, h4, h5, h6 {
+				margin-top: 1em;
+				margin-bottom: 0.1em;
+			}
+			h1 {
+				font-size: 1.8em;
+			}
+
 			hr { // seperate line
 				background-color: rgb(196, 196, 196, 1);
 				border: none;
@@ -95,7 +102,11 @@ html {
 				font-weight: 500;
 			}
 
-			p code { // inline code
+			p {
+				margin-top: 0;
+			}
+
+			p code, li code { // inline code
 				margin: 0 0.3em;
 				padding: 0.1em 0.3em;
 				border-radius: 0.3em;
@@ -125,7 +136,8 @@ html {
 			img {
 				display: block;
 				margin: 0 auto;
-				max-width: 30em;
+				width: 30em;
+				max-width: 100%;
 			}
 
 			table {
@@ -145,7 +157,7 @@ html {
 
 			.serif {
 				font-family: 'Noto Serif CJK SC', serif;
-				font-weight: 500;
+				font-weight: 600;
 			}
 
 			.spoiler {
