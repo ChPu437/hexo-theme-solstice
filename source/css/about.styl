@@ -1,5 +1,12 @@
 @import '_shared/common.styl';
 
+@font-face {
+	font-family: 'JetBrains Mono';
+	src: url('/font/JetBrains_Mono/JetBrainsMono-Regular.eot');
+	src: url('/font/JetBrains_Mono/JetBrainsMono-Regular.eot?#iefix') format('embedded-opentype'), url('/font/JetBrains_Mono/JetBrainsMono-Regular.woff2') format('woff2'), url('/font/JetBrains_Mono/JetBrainsMono-Regular.woff') format('woff'), url('/font/JetBrains_Mono/JetBrainsMono-Regular.ttf') format('truetype');
+	font-style: normal;
+}
+
 html {
 	body {
 		#greeter {
@@ -41,7 +48,7 @@ html {
 			z-index: 1;
 
 			#container {
-			
+
 				min-height: @min-height;
 				z-index: @z-index;
 				margin: 0 auto;
@@ -49,6 +56,16 @@ html {
 				padding: 1em 1em 1em 1em;
 				border-radius: 1em;
 				{background-blur-thick};
+
+				p code, li code { // inline code
+					margin: 0 0.3em;
+					padding: 0.1em 0.3em;
+					border-radius: 0.3em;
+					background: border-box rgb(36, 40, 47, 1);
+					font-family: 'Jetbrains Mono', monospace;
+					font-size: 0.9em;
+					tab-size: 4em;
+				}
 
 				#blogContainer { // 改为github等跳转按钮
 					display: grid;
