@@ -52,10 +52,12 @@ html {
 			height: @height;
 			top: 0;
 			left: 0;
-			background: no-repeat center / cover url(hexo-config('background.jpeg')); // fallback on Microsoft Edge
+			// background: no-repeat center / cover url(hexo-config('background.jpeg')); // fallback on Microsoft Edge
 			background: no-repeat center / cover image-set(
-				url(hexo-config('background.avif')),
-				url(hexo-config('background.webp')),
+				// // avif unusable on edge, disable for now
+				// url(hexo-config('background.avif')),
+				// // and you can compress a jpeg file to a very small size with almost no significant loss!
+				// url(hexo-config('background.webp')),
 				url(hexo-config('background.jpeg'))
 			);
 			background-color: #555555;
