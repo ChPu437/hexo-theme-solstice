@@ -1,0 +1,26 @@
+// default background style when light on
+background-blur-thick =
+	@supports (backdrop-filter: saturate(150%) contrast(70%) blur(8px)) {
+		background-color: rgba(0, 0, 0, 0.3);
+		backdrop-filter: saturate(150%) contrast(70%) blur(8px);
+		-webkit-backdrop-filter: saturate(150%) contrast(70%) blur(8px);
+	}
+
+	@supports not (backdrop-filter: saturate(150%) contrast(70%) blur(8px)) {
+		background-color: rgba(48, 48, 53, 1);
+		box-shadow: 0px 0px 2em #000000;
+	}
+
+background-blur-thin =
+	@supports (backdrop-filter: saturate(150%) contrast(70%) blur(8px)) {
+		background-color: rgba(0, 0, 0, 0.3);
+		backdrop-filter: saturate(150%) contrast(70%) blur(8px);
+		-webkit-backdrop-filter: saturate(150%) contrast(70%) blur(8px);
+	}
+
+	@supports not (backdrop-filter: saturate(150%) contrast(70%) blur(8px)) {
+		background-color: rgba(48, 48, 53, 1);
+		box-shadow: 0px 0px 0.75em #000000;
+	}
+
+
