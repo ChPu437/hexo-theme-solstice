@@ -36,14 +36,18 @@ html {
 
 				#blogContainer {
 					display: grid;
-					grid-template-columns: repeat(3, 33.3%);
+					grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
 					grid-template-rows: repeat(auto-fit, 4em);
+					grid-gap: 0.2em;
+					justify-content: space-between
 
 					.Blog {
-						margin: 0.4em;
-						padding: 0.1em;
+						margin: 0.2em;
+						padding: 0.3em;
 						border-radius: 0.5em;
 						transition: hover_delay ease-in-out background-color;
+						width: fit-content
+						width: -moz-fit-content
 
 						&:hover {
 							background-color: rgba(255, 255, 255, 0.1);
